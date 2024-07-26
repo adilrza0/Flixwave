@@ -1,0 +1,59 @@
+.movie-card{
+    width: 25vh;
+    height: 50vh;
+    padding-top: 1%;
+    transition: transform 0.35s;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(50px); /* Apply blur effect */
+    /* overflow: hidden; */
+    border-radius: 18px;
+}
+.movie-card:hover{
+    transform: scale(1.06);
+}
+
+.movie-card_genres > span:nth-child(n+2)::before{
+    content: " | ";
+    font-size: 10px;
+}
+.poster img{
+    width: 25vh;
+    height: 20vh;
+    height: auto;
+    object-fit: contain;
+    border-radius: 18px 18px 0px 0px;
+}
+.movie-card_poster{
+    width:25vh;
+    height: 30vh;
+    
+    object-fit: contain;
+    border-radius: 18px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+.movie-card:hover .movie-card_poster{
+     
+}
+
+.movie-card_info{
+    padding-top: 5px;
+    padding-left: 5px;
+    font-size: 11px;
+    color: rgba(var(--fg-color-2), 0.5);
+    margin-top: 5vh;
+}
+.movie-card_title{
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--fg-color-rgb);
+    
+}
+.movie-card_release{
+    font-weight: bold;
+    font-size: 12px;
+  
+}

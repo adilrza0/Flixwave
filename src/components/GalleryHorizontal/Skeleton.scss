@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,700");
+
+// Global vars
+$body-bg-color: #1f2029;
+$font: "Montserrat", sans-serif;
+$text-color: #ececec;
+
+// Skeleton Card
+$card-bg-color: lighten($body-bg-color, 2.5%);
+$card-shadow: 0 0.16rem 0.36rem 0 rgba(#000, 0.19),
+  0 0.03rem 0.09rem 0 rgba(#000, 0.11);
+$skeleton-bg-color: lighten($card-bg-color, 5%);
+$skeleton-gradient-color-start: lighten($skeleton-bg-color, 1.5%);
+$skeleton-gradient-color-mid: lighten($skeleton-bg-color, 2%);
+$skeleton-gradient-color-end: lighten($skeleton-bg-color, 2.5%);
+$skeleton-gradient: linear-gradient(
+  90deg,
+  $skeleton-gradient-color-start 0,
+  $skeleton-gradient-color-mid 4rem,
+  $skeleton-gradient-color-end 8rem
+);
+
+@mixin skeleton {
+  background-color: $skeleton-bg-color;
+  background-image: $skeleton-gradient;
+  background-position: -150% 0;
+  background-size: 2rem;
+  background-repeat: no-repeat;
+  will-change: background-position;
+  animation: skeleton 1.75s cubic-bezier(0.57, 0.21, 0.69, 1.25) forwards
+    infinite;
+}
+
+/* reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.listing {
+  display: flex;
+  width: 100%;
+  max-width: 140rem;
+  min-height: 100vh;
+  padding: 0 2rem;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+
+
+  & .card__list {
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    grid-column: 2 / span 12;
+    grid-template-columns: repeat(16, minmax(auto, 0));
+    grid-gap: 3%;
+    list-style: none;
+    
+    & .list__item {
+      display: flex;
+      flex-direction:column;
+      flex: 1;
+      width: 25vh;
+      flex-direction: column;
+      grid-column-end: span 3;
+      & .card {
+        display: flex;
+       
+        width: 100%;
+        padding: 2%;
+        
+        border-radius: 0.8rem;
+        background-color: $card-bg-color;
+        box-shadow: $card-shadow;
+        overflow: hidden;
+
+        
+        & .card__header {
+          display: flex;
+          width: 25vh;
+          height:30vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          
+          & .card__avatar {
+            display: flex;
+            width: 25vh;
+            height: 30vh;
+            
+            border-radius: 2px;
+            @include skeleton;
+          }
+        }
+        & .card__content {
+          display: flex;
+          width: 20vh;
+          padding-top: 1rem;
+          flex-direction: column;
+          & .card__title {
+            display: flex;
+            width: 70%;
+            height: 1.25rem;
+            margin-bottom: 2rem;
+            @include skeleton;
+          }
+          & .card__desc {
+            display: flex;
+            width: 35%;
+            height: 0.75rem;
+            margin-bottom: 1rem;
+            @include skeleton;
+            &:nth-of-type(2) {
+              width: 50%;
+            }
+            &:last-of-type {
+              width: 60%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// 0 - 576px
+@media screen and (max-width: 36rem) {
+  .listing {
+    & .card__list {
+      & .list__item {
+        grid-column-end: span 12;
+      }
+    }
+  }
+}
+
+// > 576px
+@media screen and (min-width: 36rem) {
+  .listing {
+    & .card__list {
+      & .list__item {
+        grid-column-end: span 6;
+      }
+    }
+  }
+}
+
+// > 992px
+@media screen and (min-width: 62rem) {
+  .listing {
+    & .card__list {
+      & .list__item {
+        grid-column-end: span 4;
+      }
+    }
+  }
+}
+
+
+// > 1200px
+@media screen and (min-width: 75rem) {
+  .listing {
+    & .card__list {
+      & .list__item {
+        grid-column-end: span 3;
+      }
+    }
+  }
+}
+
+@keyframes skeleton {
+  0%,
+  10% {
+    background-position: -150% 0;
+  }
+  100% {
+    background-position: 350% 0;
+  }
+}

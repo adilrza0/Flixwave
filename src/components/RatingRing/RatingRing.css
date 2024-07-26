@@ -1,0 +1,27 @@
+.rating-ring_circle{
+   
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.35s;
+}
+.rating-ring_wrapper{
+    display: grid;
+    position: relative;
+    top: 0px;
+    right: 12px;
+    z-index: 1;
+    grid-template-columns: 1fr;
+    align-items: center;
+    text-align: center;    
+}
+.rating-ring_wrapper > *{
+    grid-area: 1 / 1 / 2 / 2 ;
+}
+
+.rating-ring_percent{
+    color: rgba(var(--fg-color), 0.75);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

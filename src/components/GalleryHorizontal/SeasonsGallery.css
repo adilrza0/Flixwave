@@ -1,0 +1,15 @@
+.season-card_info{
+    padding-top: 5px;
+    padding-left: 5px;
+    font-size: 11px;
+    color: rgba(var(--fg-color-2), 0.5);
+}
+.season-card_title{
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--fg-color-rgb);
+}
+.season-card_episodes{
+    font-weight: bold;
+    font-size: 12px;
+}
