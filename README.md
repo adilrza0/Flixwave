@@ -49,10 +49,12 @@ The app will be available at http://localhost:3000/.
 
 ---
 ## Scripts
-npm start: Runs the app in development mode.
-npm run build: Builds the app for production.
-npm test: Launches the test runner.
-Folder Structure
+- npm start: Runs the app in development mode.
+- npm run build: Builds the app for production.
+- npm test: Launches the test runner.
+
+---
+## Folder Structure
    ```bash
 flixwave/  
 ├── public/        # Static assets  
