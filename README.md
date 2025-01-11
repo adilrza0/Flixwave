@@ -34,30 +34,25 @@
    ```bash  
    git clone https://github.com/yourusername/flixwave.git  
    cd flixwave
-2. **Install Dependencies
+2. Install Dependencies
    ```bash
    npm install
-3. **Set Up API Key
-
-Sign up for a free account at TMDb and get an API key.
-Create a .env file in the root of the project and add:
-plaintext
-Copy code
-REACT_APP_TMDB_API_KEY=your_api_key  
-Run the Development Server
-
-bash
-Copy code
-npm start  
+3. Set Up API Key
+   - Sign up for a free account at TMDb and get an API key.
+   - Create a .env file in the root of the project and add:
+     ```plaintext
+     REACT_APP_TMDB_API_KEY=your_api_key
+4. Run the Development Server
+   ```bash
+   npm start
 The app will be available at http://localhost:3000/.
 
-Scripts
+###Scripts
 npm start: Runs the app in development mode.
 npm run build: Builds the app for production.
 npm test: Launches the test runner.
 Folder Structure
-bash
-Copy code
+   ```bash
 flixwave/  
 ├── public/        # Static assets  
 ├── src/  
